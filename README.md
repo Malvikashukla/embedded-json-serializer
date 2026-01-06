@@ -38,3 +38,36 @@ The implementation avoids unnecessary dependencies and does not rely on any exte
 The design emphasizes controlled memory usage, clear buffer size management, and robust error handling to prevent buffer overflows and invalid output.
 
 The code is written in a clear and modular manner to ensure readability, maintainability, and ease of future extension.
+
+
+## Example JSON Output
+
+```json
+[
+  {
+    "gatewayId": "gateway_1234",
+    "date": "1970-01-01",
+    "deviceType": "stromleser",
+    "interval_minutes": 15,
+    "total_readings": 1,
+    "values": {
+      "device_count": 1,
+      "readings": [
+        {
+          "media": "water",
+          "meter": "waterstarm",
+          "deviceId": "stromleser_50898527",
+          "unit": "m3",
+          "data": [
+            {
+              "timestamp": "1970-01-01 00:00",
+              "meter_datetime": "1970-01-01 00:00",
+              "total_m3": 107.752,
+              "status": "OK"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
