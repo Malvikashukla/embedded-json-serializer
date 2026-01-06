@@ -14,7 +14,19 @@ int serialize_to_json(const GatewayData *data,
     }
 
     /* JSON serialization will be implemented step-by-step */
-    written = snprintf(buffer + offset, buffer_size - offset, "[\n");
+      written = snprintf(buffer + offset, buffer_size - offset, "  {\n");
+    if (written < 0 || (size_t)written >= buffer_size - offset) {
+        return -1;
+          written = snprintf(buffer + offset, buffer_size - offset,
+                       "    \"gatewayId\": \"%s\",\n", data->gateway_id);
+    if (written < 0 || (size_t)written >= buffer_size - offset) {
+        return -1;
+    }
+    offset += written;
+
+    }
+    offset += written;
+
     if (written < 0 || (size_t)written >= buffer_size - offset) {
         return -1;
     }
@@ -24,6 +36,13 @@ int serialize_to_json(const GatewayData *data,
     written = snprintf(buffer + offset, buffer_size - offset, "]\n");
     if (written < 0 || (size_t)written >= buffer_size - offset) {
         return -1;
+          written = snprintf(buffer + offset, buffer_size - offset,
+                       "    \"date\": \"%s\",\n", data->date);
+    if (written < 0 || (size_t)written >= buffer_size - offset) {
+        return -1;
+    }
+    offset += written;
+
     }
     offset += written;
 
