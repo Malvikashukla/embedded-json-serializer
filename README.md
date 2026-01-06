@@ -25,3 +25,16 @@ Although STM32CubeIDE is the preferred platform, the Arduino framework provides 
 Using Arduino allows the core logic of the serialization library to remain close to bare-metal C code while simplifying build and execution. This makes it easier to demonstrate the embedded-friendly design, memory control, and API clarity required by the assignment.
 
 The implemented library is platform-agnostic and can be ported to STM32 or ESP32 environments with minimal changes.
+
+
+## Programming Language
+
+The C programming language was selected for implementing the serialization library.
+
+C is widely used in embedded systems due to its low runtime overhead, deterministic behavior, and direct control over memory. These characteristics make it well-suited for resource-constrained environments such as microcontrollers.
+
+The implementation avoids unnecessary dependencies and does not rely on any external JSON libraries. JSON serialization is performed manually to maintain full control over memory usage and output formatting.
+
+The design emphasizes controlled memory usage, clear buffer size management, and robust error handling to prevent buffer overflows and invalid output.
+
+The code is written in a clear and modular manner to ensure readability, maintainability, and ease of future extension.
