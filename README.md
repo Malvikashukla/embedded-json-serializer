@@ -14,3 +14,14 @@ The primary focus of this project is on:
 - Clear and complete documentation suitable for firmware development
 
 The library is designed to be transport-agnostic and independent of any specific communication interface.
+
+
+## Platform and Development Environment
+
+The Arduino framework was selected as the development environment for this assignment.
+
+Although STM32CubeIDE is the preferred platform, the Arduino framework provides a lightweight and accessible environment that is well-suited for embedded firmware development and rapid prototyping.
+
+Using Arduino allows the core logic of the serialization library to remain close to bare-metal C code while simplifying build and execution. This makes it easier to demonstrate the embedded-friendly design, memory control, and API clarity required by the assignment.
+
+The implemented library is platform-agnostic and can be ported to STM32 or ESP32 environments with minimal changes.
